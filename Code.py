@@ -1,0 +1,20 @@
+import cv2
+import numpy
+Rainbow = cv2.imread("Rainbow.jpg")
+Mountain = cv2.imread("Mountain.jpg")
+Pikachu = cv2.imread("Pikachu.png")
+#drawing a circle
+circle = cv2.circle(Mountain, (200,200), 100, (200,225,0), -1)
+cv2.imshow("window1", circle)
+cv2.waitKey(0)
+rectangle = cv2.rectangle(Pikachu, (75, 60), (300, 310), (255, 255, 0), 20)
+cv2.imshow("window2", rectangle)
+cv2.waitKey(0)
+points = numpy.array([[500,100], [300,250], [400,400], [600,400], [700,250]])
+triangle = cv2.fillPoly(Mountain, pts=[points], color=(200,175,25))
+cv2.imshow("window3", triangle)
+cv2.waitKey(0)
+line = cv2.line(Rainbow, (200, 200), (400, 200), (0, 0, 0), 5, cv2.LINE_AA)
+arrow = cv2.arrowedLine(Rainbow, (200, 100), (400, 100), (0, 0, 0), 5, cv2.LINE_AA)
+cv2.imshow("window4", arrow)
+cv2.waitKey(0)
